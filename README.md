@@ -114,7 +114,7 @@ Three columns carried meaningful nulls, and each got a clear treatment:
 
 ### 2. Data modelling (Power Pivot / DAX)
 
-A star schema was built (see [Data Model](#data-model)). Aggregated measures were calculated in the Power Pivot model, with a dedicated `_Measures` table set up to hold all DAX measures in one place.
+A star schema was built (see [Data Model](#data-model)). Aggregated measures were calculated in the Power Pivot model, with all DAX measures in ` ravenstack_accounts` sheet in a Power Pivot space.
 
 A few of the measures:
 
@@ -193,13 +193,14 @@ DevTools churns at 31%, roughly double Cybersecurity and EdTech (both around 16%
 
 The industry that loses the most accounts is not the one that loses the most revenue. DevTools has the highest customer churn at 31%, yet its revenue churn rate (around 9.9%) sits below average, so the DevTools accounts that leave tend to be low-value. Cybersecurity is the mirror image: the lowest customer churn (16%) but the highest revenue churn rate (around 12.4%), so its rare departures are expensive ones. This contrast is the most useful result in the project, and a single churn-rate number would hide it completely.
 
+![Revenue churn rate by industry](visuals/revenue_churn_rate_by_industry.png)
 ![Total MRR by industry](visuals/mrr_by_industry.png)
 
 ### 4. No single dominant churn reason
 
 The six logged churn reasons are spread surprisingly evenly, each landing between roughly 15% and 19%, with features highest at 19% and budget and support tied around 17.3%. Churn here comes from a mix of factors, with no single cause standing out as the one to fix.
 
-<!-- PLACEHOLDER: "Churn Reasons Breakdown" bar chart screenshot -> /visuals/churn_reasons.png -->
+![Churn reasons breakdown](visuals/churn_reasons.png)
 
 ### 5. Product engagement does not predict churn (hypothesis rejected)
 
@@ -215,7 +216,7 @@ The support metrics barely move between churned and retained accounts: resolutio
 
 Setting churn aside, MRR grew strongly over the period, from roughly $300K per month in early 2023 to over $750K by late 2024, with clear year-over-year gains.
 
-<!-- PLACEHOLDER: "MRR Trend" line chart screenshot -> /visuals/mrr_trend.png -->
+![MRR trend, Jan 2023 to Dec 2024](visuals/mrr_trend.png)
 
 ---
 
@@ -244,8 +245,6 @@ The `Dashboard` sheet is the main deliverable. It holds:
 
 **Interactivity.** Three slicers (Plan Tier, Industry, Country) and a date Timeline filter the visuals. The slicers are wired across the relevant Pivot Charts, so one selection updates several views at once. The churn-reason charts filter on the churn table's own date column, for the modelling reason described above.
 
-<!-- PLACEHOLDER: optional close-up screenshots of the slicer panel and KPI cards -> /visuals/ -->
-
 ---
 
 ## Limitations & Caveats
@@ -263,7 +262,6 @@ The `Dashboard` sheet is the main deliverable. It holds:
 
 ```
 .
-├── README.md
 ├── data/
 │   ├── ravenstack_accounts.csv
 │   ├── ravenstack_subscriptions.csv
@@ -280,6 +278,7 @@ The `Dashboard` sheet is the main deliverable. It holds:
     ├── revenue_churn_by_plan.png
     ├── churn_reasons.png
     └── mrr_by_industry.png
+├── README.md
 ```
 ## Tools & Skills Demonstrated
 
@@ -291,6 +290,6 @@ The `Dashboard` sheet is the main deliverable. It holds:
 
 ---
 
-**Author:** <!-- PLACEHOLDER: your name --> &nbsp;|&nbsp; <!-- PLACEHOLDER: portfolio / LinkedIn / GitHub link -->
+**Author:** Abdulaziz Abidzhanov | https://www.linkedin.com/in/abdulaziz-abidzhanov-62656b343/ 
 
-**Last updated:** <!-- PLACEHOLDER: month and year -->
+**Last updated:** May-27, 2026
